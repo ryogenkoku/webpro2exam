@@ -45,7 +45,6 @@ try {
 } catch (PDOException $e) {
     var_dump($e->getMessage());
 }
-
 $pdo = null;
 
 ?>

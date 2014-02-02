@@ -1,6 +1,5 @@
 ﻿<style>
  #buner {
-   
  position: relative;
  overflow: hidden;
  }
