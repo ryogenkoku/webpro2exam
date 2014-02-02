@@ -1,24 +1,24 @@
 ﻿
 
 	<?php
-class ProductsController1 {
+class SalesController {
 	public function index() {	
 
 
-$name = $_POST['shuliang'];
+$quantity = $_POST['shuliang'];
 
-$name3 = $_POST['hao'];
+$id = $_POST['hao'];
 
-$name4 = date('Y-m-d');
+
 
 
 try {
     $pdo = new PDO('mysql:host=127.0.0.1; dbname=webpro2examdb; charset=utf8;', 'root', '');
     $stmt = $pdo->prepare('INSERT INTO sales (product_id, sales_at, quantity) VALUES (:CONTENT, now(), :CONTENT)');
  
-    $stmt->bindValue('CONTENT', $name3);
+    $stmt->bindValue('CONTENT', $id);
    
-    $stmt->bindValue('CONTENT', $name);
+    $stmt->bindValue('CONTENT', $quantity);
     $stmt->execute();  
     
     
@@ -34,7 +34,7 @@ include('./index.php');
 
 }
 
-$controller1 = new ProductsController1();
-$controller1->index();
+$controller = new SalesController ();
+$controller->index();
 
 ?>
